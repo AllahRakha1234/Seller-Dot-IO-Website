@@ -1,0 +1,307 @@
+
+/* ALL TRANSITIONS AND ANIMATION */
+
+
+@keyframes rotateAboutY{
+    0%{
+        transform: rotateY(0deg);
+    }
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes transitionIn{
+    from{
+        opacity: 0;
+        transform: rotateX(-45deg);
+    }
+    to{
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+
+
+@keyframes transitionTranslateXpositive{
+    from{
+        opacity: 0;
+        transform: translateX(450px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes transitionTranslateXnegative{
+    from{
+        opacity: 0;
+        transform: translateX(-450px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes transitionTranslateYnegative{
+    from{
+        opacity: 0;
+        transform: translateY(-500px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes transitionTranslateYpositive{
+    from{
+        opacity: 0;
+        transform: translateY(450px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+@keyframes scale{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.15);
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    }
+}
+
+
+@keyframes btnScale{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.18);
+    }
+}
+
+
+/* ************************************** */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /* background: rgb(14, 15, 15); */
+    /* background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%); */
+    /* background-image: url('./logo2.gif'); */
+    /* background-attachment: fixed; */
+    /* width: 100vw; */
+    overflow-x: hidden;
+}
+
+.videoBubble{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+}
+
+#video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#video-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px);
+}
+
+#video-overlay {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+
+/* Navigation Bar: Logo and Image */
+#logo{
+    margin: 10px 0x;
+}
+
+#logo img{
+    height: 50px;
+    border-radius: 10px;
+    animation: rotateAboutY 3s ease-in-out 2s infinite;
+}
+
+
+/* Navigation Bar */
+#navbar{
+    display: flex;
+    align-items: center;
+    /* position: sticky; */
+    /* top: 0px; */
+    border-bottom: 1px solid white;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+}
+
+#navbar ul{
+    display: flex;
+    font-family: 'Baloo Bhai', cursive;
+}
+
+#navbar ul li{ 
+    list-style: none;
+    font-size: 1.4rem;
+}
+
+#navbar ul li a{
+    color: rgb(158, 148, 148);
+    display: block;
+    margin-left: 20px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+#navbar ul li a:hover{
+    color: rgb(255, 255, 255);
+    animation: btnScale 0.5s forwards;
+}
+
+/* MAIN CONTAINER CSS */
+
+
+.videoSmoke {
+    height: 40vh;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100vw;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.welcomeMsg{
+    font-family: 'Frank Ruhl Libre', serif;
+}
+
+.wlcmMsg1{
+    animation: transitionTranslateXnegative 1s;
+    margin-bottom: -10vh;
+}
+
+.wlcmMsg3{
+    animation: transitionTranslateXnegative 1s;
+}
+
+.wlcmMsg2{
+    animation: transitionTranslateXpositive 1s;
+    margin-bottom: -10vh;
+}
+
+.homeBoxesBox{
+    animation: transitionTranslateYnegative 0.75s;
+}
+
+.homeBoxHeading{
+    animation: fadeInScale 1s forwards;
+    height: 12vh;
+    margin-bottom: -3vh;
+    margin-top: 5vh;
+}
+
+.box{
+    height: 25vh;
+    width: 35vw;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    margin-left: 5vw;
+    margin-top: 5vh;
+    display: block;
+    cursor: pointer;
+    /* margin-right: 20px; */
+}
+
+/* .box:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    transform: translateY(-15px);
+} */
+
+.box:hover {
+    animation: scale 0.4s linear;
+    animation-fill-mode: forwards;
+}
+
+.footerBox{
+    width: 100vw;
+    height: 20vh;
+    border: 2px solid white;
+    border-bottom: none;
+    border-radius: 10px;
+}
+
+
+.footerContact{
+    height: 10vh;
+    width: 20vw;
+    margin-left: 4vw;
+    margin-top: 1vh;
+}
+
+.footerSupport{
+    height: 15vh;
+    width: 20vw;
+    background-color: black;
+    margin-left: 4vw;
+    background: transparent;
+}
+
+
+.btnClass{
+    height: 6vh;
+    padding: 0px 10px;
+    border-radius: 10px;
+    margin-left: 3vw;
+    border: 2px solid white;
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+
+.btnClass:hover{
+    animation: btnScale 0.1s forwards;
+    font-weight: bold;   
+}
+
+
